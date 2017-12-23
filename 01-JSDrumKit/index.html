@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Karen Zhao">
+  <meta name="description" content="JS01">
+  <title>Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="keys">
+
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="82" class="key">
+      <kbd>R</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="69" class="key">
+      <kbd>E</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="78" class="key">
+      <kbd>N</kbd>
+      <span class="sound">boom</span>
+    </div>
+
+    <div data-key="188" class="key">
+      <kbd>,</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="32" class="key">
+      <kbd>Space</kbd>
+      <span class="sound">tink</span>
+    </div>
+
+    <div data-key="90" class="key">
+      <kbd>Z</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="190" class="key">
+      <kbd>.</kbd>
+      <span class="sound">snare</span>
+    </div>
+
+  </div>
+
+  <audio data-key="75" src="sounds/tom.wav"></audio>
+  <audio data-key="65" src="sounds/clap.wav"></audio>
+  <audio data-key="82" src="sounds/kick.wav"></audio>
+  <audio data-key="69" src="sounds/hihat.wav"></audio>
+  <audio data-key="78" src="sounds/boom.wav"></audio>
+  <audio data-key="188" src="sounds/ride.wav"></audio>
+  <audio data-key="32" src="sounds/tink.wav"></audio>
+  <audio data-key="90" src="sounds/openhat.wav"></audio>
+  <audio data-key="190" src="sounds/snare.wav"></audio>
+
+<script src="drum.js"></script>
+</body>
+</html>

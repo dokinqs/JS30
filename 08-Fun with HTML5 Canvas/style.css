@@ -1,0 +1,49 @@
+html, body {
+  margin: 0;
+  font-family: 'garmond', sans-serif;
+  text-align: center;
+  background-color: #222;
+}
+h1 {
+  color: white;
+  padding: 5px;
+  margin-bottom: 8px;
+}
+div {
+  	background: #1a2a6c; 
+	background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); 
+	background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+}
+button {
+	font-size: 20px;
+	border-radius: 8px;
+	margin-bottom: 5px;
+	cursor: pointer;
+    -webkit-transition-duration: 0.8s; /* Safari */
+    transition-duration: 0.8s;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+button:after {
+    content: "";
+    background: red;
+    display: block;
+    position: absolute;
+    padding-top: 100%;
+    padding-left: 150%;
+    margin-left: -20px!important;
+    margin-top: -100%;
+    opacity: 0;
+    transition: all 0.8s;
+}
+button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+}
+canvas {
+	background-color: white;
+	padding: 10px;
+}

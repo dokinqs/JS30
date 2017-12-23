@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Karen Zhao">
+<title>JS Reference VS Copy</title>
+</head>
+
+<body>
+
+    <h1>Option+Command+i</h1>
+    <h2>Array References point to same array <br/> So updated array edits original too</h2>
+    <h3>To Copy, use Methods like .slice, or .assign if object</h3>
+
+  <script>
+    // strings, numbers and booleans
+    let age = 100;
+    let age2 = age;
+    console.log(age, age2);
+    age = 200;
+    console.log(age, age2); // 200, 100
+    // age2 already copied var value, doesn't know that it changed
+
+    let name = 'Karen';
+    let name2 = name;
+    console.log(name, name2);
+    name = 'Karrot';
+    console.log(name, name2); // Karrot, Karen
+
+    // have an array
+    const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+
+    // want to make a copy of it.
+    // const team = players;
+    // console.log(players, team);
+
+    // can't just do this:
+    // team[3] = 'Lux';
+
+    // when we update that array?
+    // oh no - edited original array too!
+
+    // in array reference, both point to same array!
+
+    // So, take a copy instead!
+    const team2 = players.slice();
+
+    // or create a new array and concat old one in
+    const team3 = [].concat(players);
+
+    // or ES6 Spread
+    const team4 = [...players];
+
+    // team4[3] = 'whee';
+    // console.log(team4);
+
+    // or
+    const team5 = Array.from(players);
+
+    // now original one isn't changed.
+
+
+
+    // same for objects
+
+    // Objects
+    const person = {
+        name: 'Karen nnn',
+        age: 1000
+    };
+
+    // think we make a copy:
+    // const captain = person;
+    // captain.number = 47; 
+
+    // take a copy instead?
+    const cap2 = Object.assign({}, person, {
+        number: 47, age: 7});
+
+    console.log(cap2);
+
+    // Hopefully soon see object ...spread, like in React
+    // const cap3 = {...person};
+
+
+    // only 1 level deep - Arrays and Objects. lodash has cloneDeep method, but dangerous
+
+    const karen = {
+        name: 'Karen',
+        age: 100,
+        social: {
+            twitter: '@dokinqs',
+            github: 'dokinqs'
+        }
+    };
+
+    console.clear();
+    console.log(karen);
+
+    // copy
+    const dev = Object.assign({}, karen);
+
+    // poor man's clone deep
+    const dev2 = JSON.parse(JSON.stringify(karen));
+
+</script>
+</body>
+</html>

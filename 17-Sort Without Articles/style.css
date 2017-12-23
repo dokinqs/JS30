@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: url("https://images.unsplash.com/photo-1491333078588-55b6733c7de6");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+a {
+  color: #ffc600;
+  text-decoration: none;
+}
+
+#bands {
+  list-style: inside square;
+  font-size: 16px;
+  background: white;
+  width: 300px;
+  margin: auto;
+  padding: 0;
+  box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+}
+#bands li {
+  border-bottom: 1px solid #efefef;
+  padding: 16px;
+}
+#bands li:last-child {
+  border-bottom: 0;
+}

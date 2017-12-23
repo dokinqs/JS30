@@ -1,0 +1,18 @@
+html {
+box-sizing: border-box; 
+text-align: center;
+}
+*, *:before, *:after {
+box-sizing: inherit;
+}
+div {
+width: 100%; 
+padding: 70px;
+border-radius: 100px;
+}
+.one {background: #888;} /* biggest */
+.two {background: #666;}
+.three {background: #444;} /* most inner, inherits styles from parent, 1 */
+button {
+font-size: 16px;
+}

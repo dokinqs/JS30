@@ -1,0 +1,89 @@
+html {
+  text-align: center;
+  font-size: 10px;
+}
+body {
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.bg {
+  background: url(https://img.haikudeck.com/mi/9f391bc0e8f9bcbb667be7c313952b18.jpg);
+  background-size: cover;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blue(5px);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 20px solid white;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 11px #dbedff,
+    inset 0 0 10px black,
+    0 0 10px rgba(0,0,0,0.2);
+  background: url(https://78.media.tumblr.com/7ebb70b570d79b2b1341f1138792c0c0/tumblr_p0g8tngkoi1tgcve3o1_500.png);
+  background-size: cover;
+  opacity: 0.8;
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px); /* account for the height of the clock hands */
+}
+
+.me a {
+  z-index: 5;
+  text-decoration: none;
+  color: pink;
+  font-size: 20px;
+  position: relative;
+  top: 250px;
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all .05s;
+  transition-timing-function: cubic-bezier(.11, 1.14, .82, 1);
+}
+
+.hour-hand {
+  height: 10px;
+  background-color: white;
+  width: 30%;
+  left: 20%;
+}
+.min-hand {
+  height: 5px;
+  background-color: white;
+}
+.second-hand {
+  height: 2px;
+  background-color: #ffcdc0;
+  width: 40%;
+  left: 10%;
+}

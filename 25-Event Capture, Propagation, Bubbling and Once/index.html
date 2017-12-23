@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Bubbling & Capture</title>
+</head>
+
+<body class="bod">
+
+  <div class="one"> 1. parent
+    <div class="two"> 2. prevent bubbling to 1
+      <div class="three"> 3. deepest
+      </div>
+    </div>
+  </div>
+
+<button>'Click' logs in console only once</button>
+
+<script src="bubbling.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+html {
+  box-sizing: border-box;
+  font-family: 'helvetica', sans-serif;
+}
+
+body {
+  background: #16A085; 
+  background: -webkit-linear-gradient(to left, #F4D03F, #16A085); 
+  background: linear-gradient(to left, #F4D03F, #16A085); 
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+header div {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+h4 {
+  color: black;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+h5 {
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-family: 'comic sans ms';
+}
+
+.credits {
+  font-size: 20px;
+}
+
+.me {
+  font-size: 32px;
+  margin: 0;
+  padding: 10px;
+  background-color: #efefef;
+}
+
+a {
+  color: #456;
+  text-decoration: none;
+}
+
+a:hover, a:visited {
+  color: #19A099;
+  font-weight: bold;
+}
+
+.items {
+  -ms-flex-pack: justify;
+  -ms-flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 2em 4em;
+}
+
+.item {
+	width: calc(25% - 1rem);
+  -webkit-transition: all 0.2s;
+  background: #fff;
+  box-shadow: 0 0 10px 2px rgba(0,0,0,0.2);
+  height: 300px;
+  justify-content: center;
+  list-style: none;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.item a {
+  text-decoration: none;
+}
+
+.item:hover {
+  -webkit-transform: scale(1.1);
+  box-shadow: 0 0 15px 4px rgba(0,0,0,0.05);
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.item img {
+	-o-object-fit: cover;
+  height: 150px;
+  margin-left: -1rem;
+  margin-top: -1rem;
+  object-fit: cover;
+  width: calc(100% + 2rem);
+}
+
+.item.hidden img {
+  -o-object-fit: cover;
+  height: 180px;
+  margin-left: -1rem;
+  margin-top: -1rem;
+  object-fit: cover;
+  width: calc(100% + 2rem);
+}
+
+p {
+  visibility: hidden;
+  margin-top: -400px;
+}
+
+footer {
+  padding-top: 300px;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 991px) {
+  .item {
+    width: calc(30% + 0.3rem);
+  }
+  .item.hidden {
+  visibility: hidden;
+  }
+  p {
+    visibility: visible;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header {
+    padding: 2em 1em;
+  }
+  .items {
+    padding: 1em;
+  }
+  .item {
+    width: 100%;
+  }
+  .item.hidden {
+  visibility: hidden;
+  }
+  p {
+    visibility: visible;
+  }
+}
