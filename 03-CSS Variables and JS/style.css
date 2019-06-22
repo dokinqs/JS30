@@ -1,0 +1,43 @@
+:root {
+  --base: #0060FF;
+  --spacing: 10px;
+  --blur: 10px;
+/*   --gray: 0;
+  --radius: 0; */
+}
+
+img {
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+/*   -webkit-filter: grayscale(var(--gray));
+          filter: grayscale(var(--gray));
+  border-radius: var(--radius); */
+  height: 500px;
+}
+
+.hl {
+  color: var(--base);
+}
+
+h3 {
+  -webkit-margin-before: 0.7em;
+  -webkit-margin-after: 0.7em;
+}
+
+body {
+  text-align: center;
+  background: #5AD;
+  color: white;
+  font-family: 'comic sans ms', sans-serif;
+  font-weight: 10;
+  font-size: 16px;
+}
+
+.controls {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100px;
+}
