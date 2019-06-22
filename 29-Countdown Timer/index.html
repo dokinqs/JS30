@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Karen Zhao">
+<link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet'>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="https://d30y9cdsu7xlg0.cloudfront.net/png/62992-200.png">
+<title>Countdown</title>
+</head>
+
+<body>
+  
+  <div class="timer">
+    <div class="timer__controls">
+      <button data-time="60" class="timer__button">1</button>
+      <button data-time="300" class="timer__button">5</button>
+      <button data-time="900" class="timer__button">15</button>
+      <button data-time="1200" class="timer__button">20</button>
+      <button data-time="1800" class="timer__button">30</button>
+      <button data-time="3600" class="timer__button">60</button>
+      <form name="customForm" id="custom">
+        <input type="text" name="minutes" placeholder="Enter Minutes">
+      </form>
+    </div>
+    <div class="display">
+      <h1 class="display__time-left"></h1>
+      <p class="display__end-time"></p>
+    </div>
+  </div>
+
+<script src="countdown.js"></script>
+</body>
+</html>
