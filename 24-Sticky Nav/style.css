@@ -3,7 +3,7 @@ html {
   background: #076585;  
   background: -webkit-linear-gradient(to left, #fff, #076585); 
   background: linear-gradient(to left, #fff, #076585); 
-  font-family: 'helvetica neue';
+  font-family: 'helvetica neue', sans-serif;
   font-size: 24px;
   font-weight: 200;
 }
@@ -32,7 +32,7 @@ body.fixed-nav .site-wrap {
 header {
   text-align: center;
   height: 50vh;
-  background: url(http://ngm.nationalgeographic.com/ngm/0410/feature4/images/zm_zoomin.4.1.jpg) center no-repeat;
+  background: url(https://i.pinimg.com/originals/bd/7d/25/bd7d25508382dd66aab18683431c01fe.jpg) center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -89,14 +89,13 @@ li.logo a {
   color: black;
 }
 
-/* FOXES appear in nav */
 .fixed-nav li.logo {
   max-width: 500px;
 }
 
 nav a {
   text-decoration: none;
-  padding: 20px;
+  padding: 10px;
   display: inline-block;
   color: white;
   transition: all 0.2s;

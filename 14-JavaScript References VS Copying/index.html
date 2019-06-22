@@ -1,107 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="author" content="Karen Zhao">
-<title>JS Reference VS Copy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="Karen Zhao">
+    <title>JS Reference VS Copy</title>
 </head>
 
 <body>
 
     <h1>Option+Command+i</h1>
-    <h2>Array References point to same array <br/> So updated array edits original too</h2>
-    <h3>To Copy, use Methods like .slice, or .assign if object</h3>
+    <h3>To copy Arrays use Methods like .slice, [].concat, [... ]. To copy Objects use Object.assign({}, oldObj) or JSON.parse(JSON.stringify)</h3>
 
   <script>
-    // strings, numbers and booleans
-    let age = 100;
-    let age2 = age;
-    console.log(age, age2);
-    age = 200;
-    console.log(age, age2); // 200, 100
-    // age2 already copied var value, doesn't know that it changed
-
+    // just copy for strings, numbers and booleans
     let name = 'Karen';
     let name2 = name;
     console.log(name, name2);
-    name = 'Karrot';
-    console.log(name, name2); // Karrot, Karen
+    name = 'dokinqs';
+    console.log(name, name2); // dokinqs, Karen
 
-    // have an array
+
+    // make a copy of Array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
-    // want to make a copy of it.
-    // const team = players;
-    // console.log(players, team);
-
-    // can't just do this:
-    // team[3] = 'Lux';
-
-    // when we update that array?
-    // oh no - edited original array too!
-
-    // in array reference, both point to same array!
-
-    // So, take a copy instead!
+    // array reference, both point to same array, so can't plainly copy
+    // SLICE implicit (0, array.length)
     const team2 = players.slice();
-
-    // or create a new array and concat old one in
+    // or create new array and CONCAT old one in
     const team3 = [].concat(players);
-
-    // or ES6 Spread
+    // or ES6 Spread operator
     const team4 = [...players];
-
-    // team4[3] = 'whee';
-    // console.log(team4);
-
-    // or
+    // or Array.from
     const team5 = Array.from(players);
 
-    // now original one isn't changed.
+    team5[0] = 'Changed name';
+
+    console.log(team2);
+    console.log(team3);
+    console.log(team4);
+
+    console.log(team5);
+    console.log(players);
 
 
-
-    // same for objects
-
-    // Objects
+    // make a copy of Object
     const person = {
-        name: 'Karen nnn',
+        name: 'karen zzz',
         age: 1000
     };
 
-    // think we make a copy:
-    // const captain = person;
-    // captain.number = 47; 
-
-    // take a copy instead?
-    const cap2 = Object.assign({}, person, {
+    // Object.assign
+    const changedPerson = Object.assign({}, person, {
         number: 47, age: 7});
 
-    console.log(cap2);
+    // ES6 Spread operator
+    const copyPerson = {...person};
 
-    // Hopefully soon see object ...spread, like in React
-    // const cap3 = {...person};
+    console.log(changedPerson);
+    console.log(copyPerson);
+    console.log(person);
 
 
-    // only 1 level deep - Arrays and Objects. lodash has cloneDeep method, but dangerous
-
-    const karen = {
+    // make a copy of Object 1 level deep 
+    const girl = {
         name: 'Karen',
         age: 100,
         social: {
             twitter: '@dokinqs',
             github: 'dokinqs'
-        }
+        },
+        exec: function exec() {
+            return true;
+        },
     };
 
-    console.clear();
-    console.log(karen);
+    // Object.assign only makes shallow copies, but can return user-defined object methods and shallow copy circular objects
+    const copyGirl = Object.assign({}, girl, {social: "@dokinqs", location: "NY"});
 
-    // copy
-    const dev = Object.assign({}, karen);
+    // JSON.parse(JSON.stringify(obj)) - poor man's clone deep, can't return methods and doesn't work for circular objects
+    const cloneGirl = JSON.parse(JSON.stringify(girl));
 
-    // poor man's clone deep
-    const dev2 = JSON.parse(JSON.stringify(karen));
+    console.log(copyGirl);
+    console.log(cloneGirl); // missing exec function
+    console.log(girl);
+
+    // lodash has a cloneDeep method
 
 </script>
 </body>

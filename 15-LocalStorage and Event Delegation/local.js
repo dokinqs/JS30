@@ -29,7 +29,7 @@ function setState(item) {
 }
 
 function updateList() {
-    itemList.innerHTML = this.map(function (item, index) {
+    itemsList.innerHTML = this.map(function (item, index) {
       var isChecked = item.done ? 'checked' : '';
       return `
         <li>
@@ -78,8 +78,8 @@ function toggleDone(e) {
 	items[index].done = !items[index].done;
 
 	setState.call(items);
-    updateList.call(items);
- //    localStorage.setItem('items', JSON.stringify(items));
+    	updateList.call(items);
+ 	// localStorage.setItem('items', JSON.stringify(items));
 	// populateList(items, itemsList);
 }
 
@@ -109,4 +109,3 @@ populateList(items, itemsList);
 check.addEventListener('click', checkAll);
 uncheck.addEventListener('click', uncheckAll);
 clear.addEventListener('click', clearAll);
-

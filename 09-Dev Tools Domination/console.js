@@ -1,4 +1,4 @@
-const dogs = [{ name: 'doge', age: 11 }, { name: 'Pavlov\'s dog', age: 128 }];
+const dogs = [{ name: 'doge', age: 11 }, {name: 'corki', age: 3 }, { name: 'Pavlov\'s dog', age: 128 }];
 
 function makeUltraViolet() {
   const p = document.querySelector('p');
@@ -8,45 +8,12 @@ function makeUltraViolet() {
 }
 
 // Regular
-console.log('i\'m bored');
+console.log('i\'m a boring string');
 
 // Interpolated
-console.log('imma %s string!', '✌️');
+console.log('interpolated %s string!', '✌️');
 
-// Styled
-console.log('%c ho ho ho', 'font-size:50px; background:red; text-shadow:10px 10px 0 green')
-
-// warning!
-console.warn('GASP');
-
-// Error :|
-console.error('Fatality');
-
-// Info
-console.info('Hamsters are cute af');
-
-// Testing
-const p = document.querySelector('p');
-
-console.assert(p.classList.contains('blah'), 'That\'s wrong!');
-
-// clearing
-console.clear();
-
-// Viewing DOM Elements
-console.log(p);
-console.dir(p);
-
-console.clear();
-
-// Grouping together
-dogs.forEach(dog => {
-  console.groupCollapsed(`${dog.name}`);
-  console.log(`This is ${dog.name}`);
-  console.log(`${dog.name} is ${dog.age} years old`);
-  console.log(`${dog.name} is ${dog.age * 7} dog years old`);
-  console.groupEnd(`${dog.name}`);
-});
+console.table(dogs);
 
 // counting
 console.count('yes');
@@ -56,6 +23,38 @@ console.count('yes');
 console.count('yes');
 console.count('no');
 
+// // clearing
+// console.clear();
+
+// Styled
+console.log('%c ho ho ho', 'font-size:50px; background:red; text-shadow:10px 10px green; padding-right:30px;')
+
+// warning
+console.warn('Warningg');
+
+// Error
+console.error('Errorr');
+
+// Assert - error message if test evaluates false
+const p = document.querySelector('p');
+console.assert(p.classList.contains('blah'), 'That\'s wrong!');
+
+
+// Viewing DOM Elements
+// usually a toString representation
+console.log(p);
+// navigable tree, shows properties, aka console.log(util.inspect(myObj))
+console.dir(p);
+
+
+// Grouping together
+dogs.forEach(dog => {
+  // console.group(`${dog.name}`);
+  console.groupCollapsed(`${dog.name}`);
+    console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+  console.groupEnd(`${dog.name}`);
+});
+
 // timing
 console.time('fetching data');
 fetch('https://api.github.com/users/dokinqs')
@@ -63,8 +62,7 @@ fetch('https://api.github.com/users/dokinqs')
     .then(data => {
       console.timeEnd('fetching data');
       console.log(data);
+      console.log("hireable?: "+ data.hireable);
     });
 
-console.table(dogs);
-
-alert('Look in Console for Dev Tools! Click on text for Ultra Violet!');
+alert('Look in Console for Dev Tools! Click on the text for Ultra Violet!');
