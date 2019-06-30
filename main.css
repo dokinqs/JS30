@@ -4,8 +4,7 @@ html {
 }
 
 body {
-  background: #16A085; 
-  background: linear-gradient(to left, #F4D03F, #16A085); 
+  background: #000;
   margin: 0;
   text-align: center;
   color: white;
@@ -48,12 +47,12 @@ h5 {
 }
 
 a {
-  color: #456;
+  color: #747474;
   text-decoration: none;
 }
 
 a:hover, a:visited {
-  color: #19A099;
+  color: #456;
   font-weight: bold;
 }
 

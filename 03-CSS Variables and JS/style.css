@@ -10,10 +10,9 @@ img {
   padding: var(--spacing);
   background: var(--base);
   filter: blur(var(--blur));
-/*   -webkit-filter: grayscale(var(--gray));
-          filter: grayscale(var(--gray));
-  border-radius: var(--radius); */
-  height: 500px;
+  filter: grayscale(var(--gray));
+  border-radius: var(--radius);
+  height: 450px;
 }
 
 .hl {
@@ -40,4 +39,8 @@ body {
 
 input {
   width: 100px;
+}
+
+@media (max-width: 901px) {
+
 }

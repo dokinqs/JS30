@@ -1,6 +1,7 @@
   const holes = document.querySelectorAll('.hole');
   const scoreBoard = document.querySelector('.score');
   const moles = document.querySelectorAll('.mole');
+  const startButton = document.querySelector('.startButton');
   let lastHole;
   let timeUp = false;
   let score = 0;
@@ -10,11 +11,11 @@
   }
 
   function randomHole(holes) {
-    const idx = Math.floor(Math.random() * holes.length);
-    const hole = holes[idx];
+    const indx = Math.floor(Math.random() * holes.length);
+    const hole = holes[indx];
 
     if (hole === lastHole) {
-      console.log('Same one, do again');
+      console.log('random returned same hole, do again');
       return randomHole(holes);
     }
     lastHole = hole;
@@ -29,13 +30,14 @@
 
     setTimeout(() => {
       hole.classList.remove('up');
-
-      if (!timeUp) peep();
+      !timeUp ? peep() : startButton.classList.remove('gameInProgress');
     }, time);
 
   }
 
   function startGame() {
+    console.log("start pressed");
+    startButton.classList.add('gameInProgress');
     scoreBoard.textContent = 0;
     timeUp = false;
     score = 0;

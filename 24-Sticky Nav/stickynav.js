@@ -1,4 +1,5 @@
 const nav = document.querySelector('#main');
+// const nav = document.getElementById("main");
 let topOfNav = nav.offsetTop;
 
 function fixNav() {
