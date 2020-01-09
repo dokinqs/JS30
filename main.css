@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Josefin Sans', Helvetica, sans-serif;
 }
 
 body {
@@ -59,7 +59,7 @@ a:hover, a:visited {
 .items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0 auto;
   overflow: hidden;
   padding: 2em 4em;
@@ -76,6 +76,7 @@ a:hover, a:visited {
   padding: 1rem;
   position: relative;
   transition: all 0.2s;
+  margin: 2%;
 }
 
 .item a {
@@ -96,14 +97,6 @@ a:hover, a:visited {
   width: calc(100% + 2rem);
 }
 
-.item.hidden img {
-  height: 180px;
-  margin-left: -1rem;
-  margin-top: -1rem;
-  object-fit: cover;
-  width: calc(100% + 2rem);
-}
-
 p {
   visibility: hidden;
   margin-top: -350px;
@@ -117,9 +110,6 @@ footer {
 @media only screen and (max-width: 991px) {
   .item {
     width: calc(30% + 0.3rem);
-  }
-  .item.hidden {
-  display: none;
   }
   p {
     visibility: visible;
