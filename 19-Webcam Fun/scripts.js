@@ -5,7 +5,6 @@ const strip = document.querySelector('.strip');
 const snap = document.querySelector('.snap');
 
 function getVideo() {
-	// promise so use .then
 	navigator.mediaDevices.getUserMedia({video: true, audio: false})
 		.then(localMediaStream => {
 			console.log(localMediaStream);
@@ -29,8 +28,6 @@ function paintToCanvas() {
 
 		// take px out
 		let pixels = ctx.getImageData(0, 0, width, height);
-		
-		// do stuff
 
 		// pixels = redEffect(pixels);
 
@@ -40,7 +37,7 @@ function paintToCanvas() {
 		// pixels = greenScreen(pixels);
 
 		// put them back
-		// debugger; do not console.log(pixels); lol
+		// debugger; do not console.log(pixels);
 		ctx.putImageData(pixels, 0, 0);
 	}, 15);
 }
@@ -87,7 +84,7 @@ function greenScreen(pixels) {
 		levels[input.name] = input.value;
 	});
 
-	// don't console.log(levels); either lol
+	// don't console.log(levels);
 
 	for (let i = 0; i < pixels.data.length; i+=4) {
 		red = pixels.data[i+0];

@@ -1,9 +1,10 @@
 html {
-  background-image: url(https://images.unsplash.com/photo-1482775907821-a56ec43344fc);
+  background-image: url(https://images.unsplash.com/photo-1482775907821-a56ec43344fc?auto=format&fit=crop&w=1352&q=80);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   color: black;
+  height: 100%;
 }
 
 h4 {

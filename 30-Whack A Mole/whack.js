@@ -15,7 +15,7 @@
     const hole = holes[indx];
 
     if (hole === lastHole) {
-      console.log('random returned same hole, do again');
+      // console.log('random returned same hole, do again');
       return randomHole(holes);
     }
     lastHole = hole;
@@ -36,7 +36,7 @@
   }
 
   function startGame() {
-    console.log("start pressed");
+    // console.log("play pressed");
     startButton.classList.add('gameInProgress');
     scoreBoard.textContent = 0;
     timeUp = false;
@@ -47,12 +47,11 @@
 
   }
 
-  function bonk(e) {
-    if (!e.isTrusted) return; // cheater
+  function whacked(e) {
+    if (!e.isTrusted) return; // scripted cheater, not real user action
     score++;
-    // hole
     this.parentNode.classList.remove('up');
     scoreBoard.textContent = score;
   }
 
-  moles.forEach(mole => mole.addEventListener('click', bonk));
+  moles.forEach(mole => mole.addEventListener('click', whacked));

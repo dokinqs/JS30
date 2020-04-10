@@ -1,50 +1,42 @@
 html {
   box-sizing: border-box;
+  margin: 0;
+  height: 100%;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-html {
-  font-size: 10px;
-  font-family: helvetica, sans-serif;
-  margin: 20px;
-  background: #ffe259;
-  background: -webkit-linear-gradient(to right, #ffa751, #ffe259);
-  background: linear-gradient(to right, #ffa751, #ffe259); 
+body {
+  margin: 10%;
+  font-family: Helvetica, sans-serif;
+  background: #111;
+  background: -webkit-linear-gradient(150deg, #FFEA61, #FFFFB7, #FFF192); 
+  background: linear-gradient(150deg, #FFEA61, #FFFFB7, #FFF192); 
 }
 
 button {
-  font-size: 33px;
-  color: brown;
-  font-style: italic;
-  border-color: #c8c8c8;
-  border-style: double;
-  border-width: 5px;
+  font-size: 54px;
+  background-color: #fffbd2;
+  border: 1px solid black;
   cursor: pointer;
-  background-color: #fff3b2;
-  margin-bottom: 10px;
-  box-shadow: 0 10px 20px 0 #777;
+  margin-left: 10px;
+  margin-bottom: 20px;
   transform: translateY(2px);
 }
-
 button:hover {
-  background-color: #ffe766;
+  background-color: #ffce51;
 }
-
 button:active {
-  box-shadow: 0 5px #666;
-  transform: translateY(5px);
+  transform: translateY(10px);
 }
 
 .photobooth {
-  background: brown;
   max-width: 800px;
   margin: 5px auto;
-  border: 1px white solid;
+  /* background: white; */
+  /* border: 1px black solid; */
 }
-
 /*clearfix*/
 .photobooth:after {
   content: '';
@@ -54,10 +46,9 @@ button:active {
 
 .photo {
   width: 90%;
-  float: left;
-  margin-left: 5%;
-  margin-bottom: 10%;
-  border: 1px white solid;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  border: 1px black solid;
 }
 
 .player {
@@ -71,23 +62,21 @@ button:active {
 label:nth-of-type(1), label:nth-of-type(2){
   color: red;
 }
-
 label:nth-of-type(3), label:nth-of-type(4){
   color: green;
 }
-
 label:nth-of-type(5), label:nth-of-type(6){
   color: blue;
 }
 
 .strip {
-  padding: 2rem;
+  padding: 20px;
 }
 .strip img {
   width: 100px;
   overflow-x: scroll;
-  padding: 0.8rem 0.8rem 2.5rem 0.8rem;
-  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  padding: 5px 5px 25px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   background: #fff3b2;
 }
 
