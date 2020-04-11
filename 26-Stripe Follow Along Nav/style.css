@@ -8,7 +8,9 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  background: black;
   background-image: url(https://78.media.tumblr.com/7a229daeb64180c70fdd9c88d5dc8c37/tumblr_p1fakxD1Ag1tgcve3o1_1280.png);
+  background-size: cover;
 }
 
 h2 {
@@ -23,22 +25,23 @@ nav {
 }
 
 .cool > li > a {
-  color: #5dccd8;
-  text-decoration: none;
-  font-size: 20px;
-  background: rgba(55,100,110,0.2);
-  padding: 10px 20px;
   display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  color: #5dccd8;
+  padding: 10px 20px;
   margin: 20px;
+  background: rgba(55, 100, 110, 0.2);
   border-radius: 5px;
 }
 
 nav ul {
+  display: flex;
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
 }
 
 .cool > li {
@@ -51,13 +54,13 @@ nav ul {
   opacity: 0;
   position: absolute;
   overflow: hidden;
+  display: none;
   padding: 20px;
   top: -20px;
   border-radius: 2px;
   transition: all 0.5s;
   transform: translateY(100px);
   will-change: opacity;
-  display: none;
 }
 
 .trigger-enter .dropdown {
@@ -69,19 +72,16 @@ nav ul {
 }
 
 .dropdownBackground {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  background: white;
-  border-radius: 4px;
-  box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
-  transition: all 0.1s, opacity 0.7s, transform 0.05s;
-  transform-origin: 50% 0;
   display: flex;
   justify-content: center;
+  position: absolute;
+  background: white;
   opacity: 0;
+  border-radius: 4px;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s, opacity 0.7s, transform 0.05s;
+  transform-origin: 50% 0;
 }
-
 .dropdownBackground.open {
   opacity: 1;
 }
@@ -115,7 +115,7 @@ nav ul {
 .courses li {
   padding: 10px 0;
   display: block;
-  border-bottom: 1px solid rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(0, 0, 0,0.2);
 }
 
 .dropdown a {
@@ -128,10 +128,37 @@ a.button {
   display: block;
   padding: 10px;
   color: white;
-  margin-bottom: 10px;
+  margin: 10px auto;
 }
 
 /* Matches Twitter, TWITTER, twitter, tWitter, TWiTTeR... */
 .button[href*=twitter] { background: #019FE9; }
 .button[href*=facebook] { background: #3B5998; }
 .button[href*=medium] { background: green; }
+
+@media screen and (max-width: 500px) {
+  .dropdown {
+    left: 0;
+    padding: 5px;
+  }
+  .arrow {
+    display: none;
+  }
+  .bio {
+    min-width: 250px;
+  }
+  .bio img {
+    visibility: hidden;
+    width: 30px;
+    margin-right: 5px;
+  }
+  p {
+    font-size: 14px;
+  }
+  nav ul li ul li {
+    font-size: 14px;
+  }
+  .dropdownBackground {
+    max-width: 280px;
+  }
+}
